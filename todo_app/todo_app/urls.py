@@ -17,8 +17,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from tasks import views
+from tasks.views import TaskListView, TaskCreateView, TaskUpdateView, TaskDeleteView
 
 urlpatterns = [
+    #path('', views.greet.as_view()),
     path('admin/', admin.site.urls),
-    path('', include('tasks.urls')),
+    path('tasks/', include('tasks.urls')),
+    path('accounts/', include('django.contrib.auth.urls')),  # For login/logout
 ]
